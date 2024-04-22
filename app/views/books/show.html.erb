@@ -11,16 +11,16 @@
           </tr>
           <tr>
             <th>name</th>
-            <th><%= @user_id %></th>  <!-- 固定値 -->
+            <th><%= current_user.name %></th>  <!-- 固定値 -->
           </tr>
           <tr>
             <th>introduction</th>
-            <th></th>  <!-- 固定値 -->
+            <th><%= current_user.introduction %></th>  <!-- 固定値 -->
           </tr>
         </table>
         <div class='row'>
           <!-- 編集リンクが未実装 -->
-          <a class="btn btn-outline-secondary btn-block" href="">
+          <a class="btn btn-outline-secondary btn-block" href="/users/:id/edit">
             <i class="fas fa-user-cog"></i>
           </a>
         </div>
