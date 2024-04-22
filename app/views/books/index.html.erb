@@ -48,8 +48,8 @@
           <% @books.each do |book| %>
           <tbody>
             <tr>
-              <td><%= image_tag book.user.get_profile_image(80,80) %></td>
-              <td><%= book.title %></td>
+              <td></td>
+              <td><%= link_to book.title, book_path(@books) %></td>
               <td><%= book.opinion %></td>
             </tr>
           </tbody>

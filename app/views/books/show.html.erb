@@ -42,14 +42,14 @@
             <tr>
               <td></td>
               <td>
-                <%= link_to book_path(book.id) do %>
+                <%= link_to book_path(@books.id) do %>
                 <%= @books.title %>
                 <% end %>
               </td>
               <td><%= @books.opinion %></td>
               <td>
                   <% if @books.user == current_user %>
-                    <%= link_to "Destroy", book_path(@book), method: :delete %>
+                    <%= link_to "Destroy", book_path(@books), method: :delete %>
                   <% end %>
               </td>
               <td></td>
