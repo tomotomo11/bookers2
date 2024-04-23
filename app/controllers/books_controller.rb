@@ -13,8 +13,12 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-    @book.save
-    redirect_to books_path
+    if  @book.save
+      flash[:notice] = "You have updated user successfully."
+      redirect_to books_path(@book.id)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -28,15 +32,15 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @books = Book.find(params[:id])
-    @books = destroy
-    redirect_to '/books'
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :opinion)
+    params.require(:book).permit(:name, :title, :opinion)
   end
 
 end
