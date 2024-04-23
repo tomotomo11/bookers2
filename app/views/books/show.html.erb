@@ -11,11 +11,11 @@
           </tr>
           <tr>
             <th>name</th>
-            <th><%= current_user.name %></th>  <!-- 固定値 -->
+            <th><%= @books.user.name %></th>  <!-- 固定値 -->
           </tr>
           <tr>
             <th>introduction</th>
-            <th><%= current_user.introduction %></th>  <!-- 固定値 -->
+            <th><%= @books.user.introduction %></th>  <!-- 固定値 -->
           </tr>
         </table>
         <div class='row'>
@@ -40,7 +40,7 @@
           <tbody>
             <tr>
               <td>
-                <%= image_tag @books.user.get_profile_image(80,80) %><br>
+                <%= link_to(image_tag(@books.user.get_profile_image(80,80)), user_path(@books.user.id)) %><br>
                 <%= link_to @books.user.name, user_path(@books.user.id) %>
               </td>
               <td>
