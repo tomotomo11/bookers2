@@ -11,10 +11,6 @@
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
           <li>
-             <!-- ログイン後のHomeリンクは未実装です。自分で調べて実装してみましょう
-             <a class="nav-link text-light" href="">
-              <i class="fas fa-home"></i>Home
-            </a> -->
               <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
                 <i class="fas fa-home"></i>Home
               <% end %>

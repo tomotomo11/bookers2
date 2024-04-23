@@ -48,7 +48,7 @@
                 <%= @books.title %>
                 <% end %>
               </td>
-              <td><%= @books.opinion %></td>
+              <td><%= @books.body %></td>
               <td>
                 <% if @books.user == current_user %>
                   <%= link_to "Edit", edit_book_path(@books.id) %>
