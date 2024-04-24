@@ -15,13 +15,13 @@
 
     <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
-      <h4>Title</h4>
-      <%= f.text_field :title %>
+      <p>Title</p>
+      <%= f.text_field :title, class:"form-control" %>
 
-      <h4>Opinion</h4>
-      <%= f.text_area :body %><br>
+      <p>Opinion</p>
+      <%= f.text_area :body, class:"form-control" %><br>
 
-      <%= f.submit 'Update Book' %><br>
+      <%= f.submit 'Update Book',class:"btn btn-success" %><br>
 
       <%= link_to "Show", book_path(@book.id) %>
       <span>|</span>
