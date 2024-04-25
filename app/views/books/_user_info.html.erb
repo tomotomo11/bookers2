@@ -4,7 +4,7 @@
         <h2>User info</h2>
         <table class='table'>
           <tr>
-            <%= image_tag 'default-image.jpg' %>
+            <%= image_tag user.get_profile_image(100,100) %>
           </tr>
           <tr>
             <th>name</th>
@@ -29,4 +29,3 @@
           <%= f.submit 'Create Book', class:"btn btn-success mt-3" %>
         <% end %>
       </div>
-    <div class='col-md-8 offset-md-1'>
